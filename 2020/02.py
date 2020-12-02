@@ -1,7 +1,6 @@
 from runner import read_file
 import re
 
-
 def part_1(text):
     count=0
     for i in range(0,len(text), 4):
