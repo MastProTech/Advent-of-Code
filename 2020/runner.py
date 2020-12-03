@@ -1,7 +1,11 @@
 import re
 
 def read_file(path):
-    fh=open(str(path))
+    try:
+        fh=open(str(path))
+    except FileNotFoundError:
+        print('Error:404, File Not Found. Exiting...')
+        exit(404)
     text=str()
     for line in fh:
         text=text+line
