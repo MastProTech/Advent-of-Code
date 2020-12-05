@@ -1,6 +1,6 @@
 import re
 
-def read_file(path):
+def read_file(path)->str:
     try:
         fh=open(str(path))
     except FileNotFoundError:
@@ -11,7 +11,7 @@ def read_file(path):
         text=text+line
     return text
 
-def text_to_list(text:str):
+def text_to_list(text:str)->list:
     num_list=list()
     pattern=re.compile('[0-9]+')
     matches=pattern.finditer(text)
