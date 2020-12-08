@@ -1,4 +1,13 @@
-from runner import read_file, text_to_list
+from runner import read_file
+import re
+
+def text_to_list(text:str)->list:
+    num_list=list()
+    pattern=re.compile('[0-9]+')
+    matches=pattern.finditer(text)
+    for match in matches:
+        num_list.append(int(match.group(0)))
+    return num_list
 
 def part1(num_list:list, target:int):
     for i in range(len(num_list)):
