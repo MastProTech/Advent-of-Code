@@ -11,10 +11,7 @@ def read_file(path)->str:
         text=text+line
     return text
 
-def text_to_list(text:str)->list:
-    num_list=list()
-    pattern=re.compile('[0-9]+')
-    matches=pattern.finditer(text)
-    for match in matches:
-        num_list.append(int(match.group(0)))
-    return num_list
+def read_file_split_by_lines(path)->list:
+    text=read_file(path)
+    text_list=text.split('\n')
+    return text_list
